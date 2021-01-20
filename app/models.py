@@ -1,7 +1,6 @@
 from django.db import models
 from django.core import validators
 
-
 class  User(models.Model):
 
     name = models.CharField(
@@ -46,6 +45,6 @@ class Problem(models.Model):
 
     class Meta:
         verbose_name = '問題'
-        verbose_name_plural = '問題'from django.db import models
+        verbose_name_plural = '問題'
 
 # Create your models here.
