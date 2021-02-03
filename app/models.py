@@ -29,7 +29,7 @@ class Problem(models.Model):
     )
 
     text = models.TextField(
-        verbose_name='問題',
+        verbose_name='早口言葉を入力',
         max_length=100,
         blank=False,
         null=False,
