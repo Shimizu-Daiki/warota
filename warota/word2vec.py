@@ -5,3 +5,4 @@ logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=lo
  
 sentences = word2vec.Text8Corpus('ja.text8') #コーパスとして使う文章を指定
 model = word2vec.Word2Vec(sentences, size=200)
+model.save("word2vec.model")
