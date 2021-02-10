@@ -6,19 +6,24 @@
     <!-- Required meta tags always come first -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>アプリケーション名</title>
+    <title>warota</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link href="{% static "app/css/app.css" %}" rel="stylesheet">
 </head>
 
-<body>
+<body class='bg-warning'>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{% url 'index' %}">アプリケーション名</a>
+        <a class="navbar-brand" href="{% url 'index' %}">warota</a>
     </nav>
-    {% block content %} 
-    {% endblock %}
+    <div class=''>
+        <div class="container">
+            {% block content %} 
+        
+            {% endblock %}
+        </div>
+    </div>
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

@@ -4,7 +4,7 @@ from janome.analyzer import Analyzer
 from janome.tokenfilter import *
 from gensim.models import Word2Vec
 
-text="目から鱗"
+text = '目から鱗'
 
 token_filters = [CompoundNounFilter()] #こっち使う
 a = Analyzer(token_filters=token_filters)

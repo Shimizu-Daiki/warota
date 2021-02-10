@@ -1,3 +1,6 @@
+
+
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="ja">
@@ -20,6 +23,7 @@
             <ul class="navbar-nav ml-md-auto align-items-center">
               <li>
                 <a class="btn btn-outline-secondary text-right" href="{% url 'form' %}">お題を作成</a>
+                
               </li>
             </ul>
           </div>
@@ -27,21 +31,10 @@
     </nav>
     <div class=''>
       <div class='container'>
-        <h1 class='text-center'>お題一覧</h1>
+        <h1 class='text-center'>回答一覧</h1>
+        <a class="btn btn-dark" href="{% url 'answer' %}">回答を作成</a>
   
-        {% for post in posts %}
-        <div class="card text-center mb-4">
-            <p class="card-header">お題</p>
-            <div class="card-body">
-                <h5 class='card-text'>{{ post.text }}</h5>
-                <h5 class='card-text text-right'>作成者:{{ post.name }}</h5>
-  
-                <a href="{% url 'delete' post.pk %}" class="btn btn-primary">削除</a>
-                <a href="{% url 'show' post.pk %}" class="btn btn-primary">回答ページへ飛ぶ</a>
-            </div>
-      
-        </div>
-        {% endfor %}
+        
   
       </div>
     </div>
