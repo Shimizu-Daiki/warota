@@ -3,8 +3,15 @@ from janome.tokenizer import Tokenizer
 from janome.analyzer import Analyzer
 from janome.tokenfilter import *
 from gensim.models import Word2Vec
+from app.models import  Answer
 
-text = '目から鱗'
+def get_answer(request):
+    post = Answer.objects.first()
+    answer = post.text
+    return answer
+
+text = answer
+#text = '坊主が上手に屏風に坊主の絵を描いた'
 
 token_filters = [CompoundNounFilter()] #こっち使う
 a = Analyzer(token_filters=token_filters)
@@ -16,10 +23,10 @@ model = Word2Vec.load("word2vec.model")
 for token in tokens: #品詞情報と表層系を取得、助詞は最初から弾く
     surface = token.surface #表層形を取得
     hinshi = token.part_of_speech.split(',')[0] #品詞情報のみ抽出
-    if surface not in stop_word_set and hinshi == "動詞" or '名詞' or '形容詞':
+    if surface not in stop_word_set and hinshi == '名詞' or '形容詞':
         if random.random() > 0.5: #順番に、50%の確立でランダム抽出を行うかどうか
             result = model.most_similar(surface)[0][0]
-            print(result)
+            #print(result)
             word_list.append(result)
         else: #そのままword_listに追加
             word_list.append(surface)

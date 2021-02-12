@@ -1,0 +1,104 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,200,100);
+
+
+body * {
+  font-family: 'Raleway', sans-serif;
+}
+
+.about {
+  color: #c2c2c2;
+  height: 100px
+}
+
+.about h1 {
+  position: relative;
+  top: 50%;
+  text-align: center;
+  transform: translateY(-50%);
+}
+
+.demo {
+  color: white;
+  height: 400px;
+  background-image: linear-gradient(to right, #177E97 0%, #6EE4AB 100%);
+  box-shadow: 3px 0px 20px 3px #C5C5C5;
+}
+
+.pulldown {
+  font-weight: 100;
+  height: 40px;
+  position: relative;
+  width: 250px;
+}
+
+.pulldown-expand {
+  -webkit-appearance: none;
+  padding: 0 0;
+  margin: 0 0;
+  outline: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+
+
+.pulldown-content-wrap {
+  position: absolute;
+  top: 100%;
+  height: initial;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.pulldown-content {
+  margin: 0 0;
+  padding: 0 0;
+  transform: translateY( calc(-100% + 2px) );
+  transition: transform 0.3s ease;
+}
+
+.pulldown-expand:checked + .pulldown-content-wrap .pulldown-content{
+  transform: translateY(0%);
+}
+
+.pulldown-content, .pulldown-content-wrap {
+  width: 100%;
+}
+
+.pulldown-content {
+  
+  border-bottom: 2px solid rgba(255,255,255,0.6);
+  background-color: rgba(255,255,255,0.2);
+}
+
+.pulldown-label {
+  font-size: 25px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.pulldown {
+  background-color: rgba(255,255,255,0.3);
+  display: table;
+  position: relative;
+  top: 30%;
+  transform: translateY(-50%);
+  margin: 0px auto;
+}
+
+.pulldown-label, .pulldown li {
+  margin-left: 8px;
+}
+
+.pulldown-content {
+  font-size: 20px;
+}
+
+.pulldown-content li {
+  padding: 5px 0px;
+}
