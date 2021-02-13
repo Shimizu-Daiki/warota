@@ -9,5 +9,5 @@ urlpatterns = [
     path('answer', views.get_answer_form, name='answer'),
     path("answer/<int:pk>/delete/", views.answer_delete, name="answer_delete"),
     path("answer/<int:pk>/delete/", views.answer_delete, name="answer_delete"),
-    path('ai_answer', views.ai_answer, name='ai_answer'),
+    path('swap_word/<int:pk>/show/', views.swap_word, name='ai_answer'),
 ]
