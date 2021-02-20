@@ -33,7 +33,7 @@
         <div class="card text-center mb-4">
             <p class="card-header">お題</p>
             <div class="card-body">
-                <h5 class='card-text'>{{ post.text }}</h5>
+                <h5 class='card-text' style="font-weight: bold;">{{ post.text }}</h5>
                 <h5 class='card-text text-right'>作成者:{{ post.name }}</h5>
 
                 <a href="{% url 'show' post.pk %}" class="btn btn-primary">回答ページへ飛ぶ</a>
