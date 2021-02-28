@@ -82,6 +82,9 @@ DATABASES = {
     }
 }
 
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -121,9 +124,24 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
 LOGIN_URL='admin:login'
 LOGOUT_REDIRECT_URL='/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-django_heroku.settings(locals())
+ALLOWED_HOSTS = ["warota0125.herokuapp.com"]
+
+DEBUG = False
+
+try:
+    from config.local_settings import *
+except ImportError:
+    pass
+
+if not DEBUG:
+    import django_heroku
+    django_heroku.settings(locals())
